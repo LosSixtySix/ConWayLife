@@ -6,7 +6,10 @@ let positionsTooFill = [];
 
 const grid = Array.from({length: 120}, () => new Array(120).fill(0));
 
-const gameTime = 500;
+const gameTime = 20;
+
+
+const colors = ["#1b70c4","#9d7d01","#1b3e8d","#992c99","#539d84","#5d4f15","#5457de"]
 
 var start = false
 
@@ -69,6 +72,7 @@ var myGameArea = {
 
 const update = async() =>{
     requestAnimationFrame(()=>{
+        let RandomNumber = Math.floor(Math.random() * colors.length)
         myGameArea.context.clearRect(0,0,myGameArea.canvas.width,myGameArea.canvas.height)
         if(start)
         {
@@ -147,7 +151,7 @@ const update = async() =>{
                     }
                     if(grid[x][y] === 1)
                     {
-                        myGameArea.context.fillStyle = "#000000"
+                        myGameArea.context.fillStyle = colors[RandomNumber]
                         myGameArea.context.fillRect(x*5,y*5,5,5)
                     }
                 }
@@ -161,7 +165,7 @@ const update = async() =>{
                     {
                         if(grid[x][y] === 1)
                             {
-                                myGameArea.context.fillStyle = "#000000"
+                                myGameArea.context.fillStyle = colors[RandomNumber]
                                 myGameArea.context.fillRect(x*5,y*5,5,5)
                             }
                     }
