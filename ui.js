@@ -4,9 +4,9 @@ const isKeyDown = (key) => pressedKeys.has(key)
 
 let positionsTooFill = [];
 
-const grid = Array.from({length: 120}, () => new Array(120).fill(0));
+const grid = Array.from({length: 600}, () => new Array(600).fill(0));
 
-const gameTime = 20;
+const gameTime = 25;
 
 
 const colors = ["#1b70c4","#9d7d01","#1b3e8d","#992c99","#539d84","#5d4f15","#5457de"]
@@ -70,9 +70,11 @@ var myGameArea = {
     }
 }
 
+let RandomNumber = Math.floor(Math.random() * colors.length)
+
 const update = async() =>{
     requestAnimationFrame(()=>{
-        let RandomNumber = Math.floor(Math.random() * colors.length)
+        
         myGameArea.context.clearRect(0,0,myGameArea.canvas.width,myGameArea.canvas.height)
         if(start)
         {
