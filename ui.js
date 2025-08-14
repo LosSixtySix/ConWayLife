@@ -4,9 +4,9 @@ const isKeyDown = (key) => pressedKeys.has(key)
 
 let positionsTooFill = [];
 
-const grid = Array.from({length: 600}, () => new Array(600).fill(0));
+const grid = Array.from({length: 120}, () => new Array(120).fill(0));
 
-const gameTime = 25;
+const gameTime = 0;
 
 
 const colors = ["#1b70c4","#9d7d01","#1b3e8d","#992c99","#539d84","#5d4f15","#5457de"]
@@ -39,7 +39,7 @@ startButton.addEventListener("click",startGame)
 pauseButton.addEventListener("click",pauseGame)
 
 var myGameArea = {
-    canvas: document.createElement("canvas"),
+    canvas: document.getElementById("canvas"),
     getMousePos: function(event){
         var rect = this.canvas.getBoundingClientRect();
         return{
@@ -54,8 +54,11 @@ var myGameArea = {
 
 
 
+        //canvasDiv = document.getElementById("CanvasDiv")
+        //canvasDiv.appendChild(this.canvas)
 
-        document.body.appendChild(this.canvas)
+        //document.body.appendChild(canvasDiv)
+        //document.body.appendChild(this.canvas)
 
 
 
